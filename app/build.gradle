@@ -4,16 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk rootProject.ext.android["compileSdkVersion"]
 
     defaultConfig {
         applicationId "wiki.scene.mvidemo"
-        minSdk 21
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdk rootProject.ext.android["minSdkVersion"]
+        targetSdk rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
     }
 
     buildTypes {
@@ -37,4 +35,6 @@ android {
 dependencies {
 
     implementation project(':base')
+
+    implementation rootProject.ext.dependencies["AndroidAutoSize"]
 }
