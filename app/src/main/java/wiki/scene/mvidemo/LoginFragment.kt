@@ -11,7 +11,7 @@ import wiki.scene.mvidemo.databinding.FragmentLoginBinding
 import wiki.scene.mvidemo.viewmodel.LoginViewModel
 import wiki.scene.viewbinding.viewbindingutil.viewBinding
 
-class LoginFragment : BaseFragment(R.layout.fragment_login), MavericksView {
+class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
     private val mBinding: FragmentLoginBinding by viewBinding()
     private val viewModel: LoginViewModel by navGraphViewModel(R.id.nav_graph)

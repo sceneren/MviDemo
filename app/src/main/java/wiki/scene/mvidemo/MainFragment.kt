@@ -7,7 +7,7 @@ import wiki.scene.base.BaseFragment
 import wiki.scene.mvidemo.databinding.FragmentMainBinding
 import wiki.scene.viewbinding.viewbindingutil.viewBinding
 
-class MainFragment : BaseFragment(R.layout.fragment_main), MavericksView {
+class MainFragment : BaseFragment(R.layout.fragment_main) {
     private val mBinding: FragmentMainBinding by viewBinding()
     override fun initTitleBar(): TitleBar {
         return mBinding.includeTitle.titleBar.apply {
