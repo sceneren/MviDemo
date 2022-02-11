@@ -62,4 +62,5 @@ dependencies {
     api rootProject.ext.dependencies["GsonFactory"]
 
     api rootProject.ext.dependencies["FlycoTabLayout"]
+    api rootProject.ext.dependencies["live_event_bus_x"]
 }

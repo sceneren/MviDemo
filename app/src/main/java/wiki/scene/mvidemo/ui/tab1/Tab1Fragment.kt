@@ -2,7 +2,7 @@ package wiki.scene.mvidemo.ui.tab1
 
 import android.os.Bundle
 import com.hjq.bar.TitleBar
-import wiki.scene.base.BaseFragment
+import wiki.scene.base.base.BaseFragment
 import wiki.scene.mvidemo.R
 import wiki.scene.mvidemo.databinding.FragmentTab1Binding
 import wiki.scene.viewbinding.viewbindingutil.viewBinding

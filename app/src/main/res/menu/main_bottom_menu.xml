@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_tab_1"
+        android:icon="@drawable/tab_home_unselect"
+        android:title="Tab1" />
+
+    <item
+        android:id="@+id/nav_tab_2"
+        android:icon="@drawable/tab_speech_unselect"
+        android:title="Tab2" />
+
+    <item
+        android:id="@+id/nav_tab_3"
+        android:icon="@drawable/tab_contact_unselect"
+        android:title="Tab3" />
+    <item
+        android:id="@+id/nav_tab_4"
+        android:icon="@drawable/tab_more_unselect"
+        android:title="Tab4" />
+</menu>

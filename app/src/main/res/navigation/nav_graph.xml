@@ -1,54 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_main">
-
-    <fragment
-        android:id="@+id/fragment_main"
-        android:name="wiki.scene.mvidemo.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main">
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragment_tab_1"
-        android:name="wiki.scene.mvidemo.ui.tab1.Tab1Fragment"
-        tools:layout="@layout/fragment_tab_1" />
-
-    <fragment
-        android:id="@+id/fragment_tab_2"
-        android:name="wiki.scene.mvidemo.ui.tab2.Tab2Fragment"
-        tools:layout="@layout/fragment_tab_2" />
-
-    <fragment
-        android:id="@+id/fragment_tab_3"
-        android:name="wiki.scene.mvidemo.ui.tab3.Tab3Fragment"
-        tools:layout="@layout/fragment_tab_3" />
-
-    <fragment
-        android:id="@+id/fragment_tab_4"
-        android:name="wiki.scene.mvidemo.ui.tab4.Tab4Fragment"
-        tools:layout="@layout/fragment_tab_4">
-
-        <action
-            android:id="@+id/action_to_login"
-            app:destination="@+id/fragment_login" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragment_login"
-        android:name="wiki.scene.mvidemo.ui.login.LoginFragment"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_to_register"
-            app:destination="@id/fragment_register" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragment_register"
-        android:name="wiki.scene.mvidemo.ui.login.RegisterFragment"
-        tools:layout="@layout/fragment_register" />
+    app:startDestination="@id/nav_tab_1">
+    <include app:graph="@navigation/nav_tab_1" />
+    <include app:graph="@navigation/nav_tab_2" />
+    <include app:graph="@navigation/nav_tab_3" />
+    <include app:graph="@navigation/nav_tab_4" />
+    <action
+        android:id="@+id/action_to_login"
+        app:destination="@id/fragment_login" />
 </navigation>
