@@ -5,10 +5,9 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.hjq.bar.TitleBar
-import wiki.scene.base.BaseFragment
+import wiki.scene.base.base.BaseFragment
 import wiki.scene.mvidemo.R
 import wiki.scene.mvidemo.databinding.FragmentTab4Binding
-import wiki.scene.mvidemo.ui.tab2.Tab2Fragment
 import wiki.scene.viewbinding.viewbindingutil.viewBinding
 
 class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {

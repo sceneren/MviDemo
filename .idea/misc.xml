@@ -5,8 +5,10 @@
       <map>
         <entry key="../../../.gradle/caches/transforms-3/baafc3d1dfe7200fe056451fcc91d0b0/transformed/jetified-TitleBar-9.2/res/drawable/bar_drawable_placeholder.xml" value="0.1055" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/layout/app_base_title.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/app_base_title_bar.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.22395833333333334" />
@@ -14,6 +16,7 @@
         <entry key="app/src/main/res/layout/fragment_tab_2.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/fragment_tab_3.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/fragment_tab_4.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/menu/main_bottom_menu.xml" value="0.22395833333333334" />
       </map>
     </option>
   </component>
