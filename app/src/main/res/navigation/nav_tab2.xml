@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_tab2">
+    <fragment
+        android:id="@+id/fragment_tab_2"
+        android:name="wiki.scene.mvidemo.ui.tab2.Tab2Fragment"
+        tools:layout="@layout/fragment_tab_2" />
+
+</navigation>

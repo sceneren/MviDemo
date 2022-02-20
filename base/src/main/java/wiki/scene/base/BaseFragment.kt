@@ -20,6 +20,10 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
 
     abstract fun initView()
 
+    open fun initData() {
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         immersionBar {
@@ -38,6 +42,8 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
         }
 
         initView()
+
+        view.postDelayed({ initData() }, 300L)
     }
 
     override fun onLeftClick(view: View) {

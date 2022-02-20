@@ -1,6 +1,8 @@
 package wiki.scene.mvidemo.ui.tab4
 
 import android.os.Bundle
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.hjq.bar.TitleBar
 import wiki.scene.base.BaseFragment
@@ -28,7 +30,7 @@ class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {
     override fun initView() {
         mBinding.btnToLogin
             .setOnClickListener {
-                findNavController().navigate(R.id.action_to_login)
+               requireActivity().findNavController(R.id.nav_host_fragment).navigate(R.id.action_to_login)
             }
     }
 

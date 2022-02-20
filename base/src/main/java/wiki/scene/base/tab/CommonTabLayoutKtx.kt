@@ -13,8 +13,11 @@ fun CommonTabLayout.bind(
     fragmentArray: MutableList<Fragment>,
     listener: MainTabSelectListener? = null
 ) {
-    viewPager2.adapter = ViewPager2Adapter(fragment, fragmentArray)
+    if (viewPager2.adapter == null) {
+        viewPager2.adapter = ViewPager2Adapter(fragment, fragmentArray)
+    }
     viewPager2.isUserInputEnabled = false
+    viewPager2.offscreenPageLimit = fragmentArray.size
 
     setOnTabSelectListener(object : OnTabSelectListener {
         override fun onTabSelect(position: Int) {

@@ -1,6 +1,7 @@
 package wiki.scene.mvidemo.ui.main
 
 import androidx.fragment.app.Fragment
+import com.blankj.utilcode.util.LogUtils
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.hjq.bar.TitleBar
 import wiki.scene.base.BaseFragment
@@ -31,6 +32,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     }
 
     override fun initView() {
+        LogUtils.e("initView")
         tabList.add(
             MainTabEntity(
                 "Tab1",

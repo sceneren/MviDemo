@@ -32,6 +32,13 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+        force 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    }
+}
+
 dependencies {
 
     implementation project(':base')

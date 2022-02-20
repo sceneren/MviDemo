@@ -2,13 +2,17 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_main">
-
+    android:id="@+id/nav_tab4">
     <fragment
-        android:id="@+id/fragment_main"
-        android:name="wiki.scene.mvidemo.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        android:id="@+id/fragment_tab_4"
+        android:name="wiki.scene.mvidemo.ui.tab4.Tab4Fragment"
+        tools:layout="@layout/fragment_tab_4">
+
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@+id/fragment_login" />
+
+    </fragment>
     <action
         android:id="@+id/action_to_login"
         app:destination="@+id/fragment_login" />
@@ -25,8 +29,4 @@
         android:id="@+id/fragment_register"
         android:name="wiki.scene.mvidemo.ui.login.RegisterFragment"
         tools:layout="@layout/fragment_register" />
-    <include app:graph="@navigation/nav_tab1" />
-    <include app:graph="@navigation/nav_tab2" />
-    <include app:graph="@navigation/nav_tab3" />
-    <include app:graph="@navigation/nav_tab4" />
 </navigation>
