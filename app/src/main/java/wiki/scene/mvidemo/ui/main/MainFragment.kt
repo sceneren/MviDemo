@@ -6,7 +6,6 @@ import com.airbnb.mvrx.withState
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.hjq.bar.TitleBar
 import wiki.scene.base.base.BaseFragment
-import wiki.scene.base.tab.MainTabEntity
 import wiki.scene.base.tab.MainTabSelectListener
 import wiki.scene.base.tab.bind
 import wiki.scene.mvidemo.R
@@ -37,32 +36,16 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             val tabList = mutableListOf<CustomTabEntity>()
             val fragmentArray = mutableListOf<Fragment>()
             tabList.add(
-                MainTabEntity(
-                    "Tab1",
-                    R.drawable.tab_home_select,
-                    R.drawable.tab_home_unselect
-                )
+                it.tabs[0]
             )
             tabList.add(
-                MainTabEntity(
-                    "Tab2",
-                    R.drawable.tab_speech_select,
-                    R.drawable.tab_speech_unselect
-                )
+                it.tabs[1]
             )
             tabList.add(
-                MainTabEntity(
-                    "Tab3",
-                    R.drawable.tab_contact_select,
-                    R.drawable.tab_contact_unselect
-                )
+                it.tabs[2]
             )
             tabList.add(
-                MainTabEntity(
-                    "Tab4",
-                    R.drawable.tab_more_select,
-                    R.drawable.tab_more_unselect
-                )
+                it.tabs[3]
             )
 
             fragmentArray.add(

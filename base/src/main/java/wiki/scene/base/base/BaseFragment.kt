@@ -80,7 +80,6 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
     }
 
     override fun loadData() {
-
     }
 
     override fun onLeftClick(view: View) {

@@ -1,8 +1,11 @@
 package wiki.scene.mvidemo.ui.login
 
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.airbnb.mvrx.fragmentViewModel
+import com.airbnb.mvrx.Mavericks
+import com.airbnb.mvrx.args
+import com.airbnb.mvrx.navigation.navGraphViewModel
 import com.airbnb.mvrx.withState
 import com.blankj.utilcode.util.LogUtils
 import com.hjq.bar.TitleBar
@@ -15,7 +18,13 @@ import wiki.scene.viewbinding.viewbindingutil.viewBinding
 class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
     private val mBinding: FragmentLoginBinding by viewBinding()
-    private val viewModel: LoginViewModel by fragmentViewModel()
+    private val viewModel: LoginViewModel by navGraphViewModel(R.id.nav_graph)
+    private val position: Int by args()
+
+    companion object {
+        fun arg(position: Int) = bundleOf(Mavericks.KEY_ARG to position)
+    }
+
     override fun initTitleBar(): TitleBar {
         return mBinding.includeTitle.titleBar.apply {
             title = "登录"
@@ -27,8 +36,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
     }
 
     override fun initView() {
-
-        LogUtils.e("LoginFragment.initView")
+        LogUtils.e("LoginFragment.initView===>position=$position")
 
         mBinding.btnLogin.setOnClickListener {
             val username = mBinding.username.text.toString()
@@ -36,6 +44,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
             viewModel.login(username, password)
 
             withState(viewModel) { state ->
+                LogUtils.e("LoginFragment.withState(viewModel)===>position=${state.position}")
                 Toast.makeText(
                     this@LoginFragment.context,
                     state.userInfo,
@@ -52,20 +61,6 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
     override fun invalidate() {
         //需要监听一直变化的才写在这
-    }
 
-    override fun onResume() {
-        super.onResume()
-        LogUtils.e("LoginFragment.onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        LogUtils.e("LoginFragment.onPause")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        LogUtils.e("LoginFragment.onDestroyView")
     }
 }
