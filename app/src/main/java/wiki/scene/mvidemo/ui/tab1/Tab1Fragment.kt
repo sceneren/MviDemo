@@ -24,6 +24,8 @@ class Tab1Fragment : BaseFragment(R.layout.fragment_tab_1) {
     }
 
     override fun initView() {
+
+
     }
 
     override fun invalidate() {

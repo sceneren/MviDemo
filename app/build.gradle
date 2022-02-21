@@ -49,6 +49,5 @@ dependencies {
     implementation project(':base')
 
     implementation rootProject.ext.dependencies["AndroidAutoSize"]
-
-    kapt rootProject.ext.dependencies["epoxy_processor"]
+    implementation rootProject.ext.dependencies["BasePopup"]
 }

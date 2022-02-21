@@ -55,7 +55,9 @@ ext {
             AgentWeb_Downloader          : "v5.0.0-androidx",
             mavericks                    : "2.6.0",
             viewBindingUtil              : "0.0.3",
-            epoxy                        : "5.0.0-beta03"
+            rxhttp                       : "2.8.4",
+            BasePopup                    : "3.2.0",
+
     ]
 
     dependencies = [
@@ -142,7 +144,10 @@ ext {
             "mavericks"                    : "com.airbnb.android:mavericks:${version["mavericks"]}",
             "mavericks-navigation"         : "com.airbnb.android:mavericks-navigation:${version["mavericks"]}",
             "viewBindingUtil"              : "com.github.sceneren:ViewBindingUtil:${version["viewBindingUtil"]}",
-            "epoxy"                        : "com.airbnb.android:epoxy:${version["epoxy"]}",
-            "epoxy_processor"              : "com.airbnb.android:epoxy-processor:${version["epoxy"]}"
+            //https://github.com/liujingxing/rxhttp
+            "rxhttp"                       : "com.github.liujingxing.rxhttp:rxhttp:${version["rxhttp"]}",
+            "rxhttp_compiler"              : "com.github.liujingxing.rxhttp:rxhttp-compiler:${version["rxhttp"]}",
+            //https://github.com/razerdp/BasePopup
+            "BasePopup"                    : "io.github.razerdp:BasePopup:${version["BasePopup"]}"
     ]
 }

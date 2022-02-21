@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.mvrx.fragmentViewModel
+import com.airbnb.mvrx.withState
+import com.blankj.utilcode.util.LogUtils
 import com.chad.library.adapter.base.BaseBinderAdapter
 import com.hjq.bar.TitleBar
 import wiki.scene.base.base.BaseFragment
@@ -32,20 +34,58 @@ class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {
 
     override fun initView() {
         mBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val madapter = BaseBinderAdapter().apply {
+        val mAdapter = BaseBinderAdapter().apply {
             addItemBinder(Tab4ItemBinder())
             for (i in 0..30) {
                 addData("数据${i}")
             }
-            setOnItemClickListener { adapter, view, position ->
+            setOnItemClickListener { _, _, position ->
                 requireParentFragment().findNavController()
                     .navigate(R.id.action_to_login, LoginFragment.arg(position))
             }
         }
-        mBinding.recyclerView.adapter = madapter
+        mBinding.recyclerView.adapter = mAdapter
+
+    }
+
+    override fun loadData() {
+        super.loadData()
+        viewModel.getData()
     }
 
     override fun invalidate() {
+        withState(viewModel) {
+            when (it.uiState) {
+                0 -> {
+                    showLoadingPage()
+                }
+                1 -> {
+                    showEmptyPage()
+                }
+                2 -> {
+                    showErrorPage()
+                }
+                3 -> {
+                    showSuccessPage()
+                }
+            }
+        }
+    }
+
+    private fun showLoadingPage() {
+        LogUtils.e("showLoadingPage")
+    }
+
+    private fun showEmptyPage() {
+        LogUtils.e("showEmptyPage")
+    }
+
+    private fun showErrorPage() {
+        LogUtils.e("showErrorPage")
+    }
+
+    private fun showSuccessPage() {
+        LogUtils.e("showSuccessPage")
     }
 
     companion object {
