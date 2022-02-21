@@ -54,7 +54,8 @@ ext {
             AgentWeb                     : "v5.0.0-alpha.1-androidx",
             AgentWeb_Downloader          : "v5.0.0-androidx",
             mavericks                    : "2.6.0",
-            viewBindingUtil              : "0.0.3"
+            viewBindingUtil              : "0.0.3",
+            epoxy                        : "5.0.0-beta03"
     ]
 
     dependencies = [
@@ -140,6 +141,8 @@ ext {
             //https://airbnb.io/mavericks/#/
             "mavericks"                    : "com.airbnb.android:mavericks:${version["mavericks"]}",
             "mavericks-navigation"         : "com.airbnb.android:mavericks-navigation:${version["mavericks"]}",
-            "viewBindingUtil"              : "com.github.sceneren:ViewBindingUtil:${version["viewBindingUtil"]}"
+            "viewBindingUtil"              : "com.github.sceneren:ViewBindingUtil:${version["viewBindingUtil"]}",
+            "epoxy"                        : "com.airbnb.android:epoxy:${version["epoxy"]}",
+            "epoxy_processor"              : "com.airbnb.android:epoxy-processor:${version["epoxy"]}"
     ]
 }

@@ -28,13 +28,6 @@ android {
     }
 }
 
-configurations.all {
-    resolutionStrategy {
-        force 'androidx.navigation:navigation-fragment-ktx:2.4.1'
-        force 'androidx.navigation:navigation-ui-ktx:2.4.1'
-    }
-}
-
 dependencies {
 
     api rootProject.ext.dependencies["core_ktx"]
@@ -69,5 +62,7 @@ dependencies {
     api rootProject.ext.dependencies["GsonFactory"]
 
     api rootProject.ext.dependencies["FlycoTabLayout"]
-    api rootProject.ext.dependencies["live_event_bus_x"]
+    api(rootProject.ext.dependencies["epoxy"]) { exclude group: "com.android.support" }
+
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
 }

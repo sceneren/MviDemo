@@ -2,7 +2,7 @@ package wiki.scene.mvidemo.ui.login
 
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.airbnb.mvrx.navigation.navGraphViewModel
+import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
 import com.blankj.utilcode.util.LogUtils
 import com.hjq.bar.TitleBar
@@ -15,7 +15,7 @@ import wiki.scene.viewbinding.viewbindingutil.viewBinding
 class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
     private val mBinding: FragmentLoginBinding by viewBinding()
-    private val viewModel: LoginViewModel by navGraphViewModel(R.id.nav_graph)
+    private val viewModel: LoginViewModel by fragmentViewModel()
     override fun initTitleBar(): TitleBar {
         return mBinding.includeTitle.titleBar.apply {
             title = "登录"

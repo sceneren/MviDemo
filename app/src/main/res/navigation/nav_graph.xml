@@ -8,10 +8,13 @@
     <fragment
         android:id="@+id/fragment_main"
         android:name="wiki.scene.mvidemo.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main" />
-    <action
-        android:id="@+id/action_to_login"
-        app:destination="@+id/fragment_login" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@+id/fragment_login" />
+    </fragment>
+
+
     <fragment
         android:id="@+id/fragment_login"
         android:name="wiki.scene.mvidemo.ui.login.LoginFragment"
@@ -25,8 +28,4 @@
         android:id="@+id/fragment_register"
         android:name="wiki.scene.mvidemo.ui.login.RegisterFragment"
         tools:layout="@layout/fragment_register" />
-    <include app:graph="@navigation/nav_tab1" />
-    <include app:graph="@navigation/nav_tab2" />
-    <include app:graph="@navigation/nav_tab3" />
-    <include app:graph="@navigation/nav_tab4" />
 </navigation>
