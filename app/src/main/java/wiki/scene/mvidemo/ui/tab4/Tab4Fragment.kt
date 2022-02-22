@@ -41,7 +41,9 @@ class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {
             }
             setOnItemClickListener { _, _, position ->
                 requireParentFragment().findNavController()
-                    .navigate(R.id.action_to_login, LoginFragment.arg(position))
+                    .navigate(R.id.action_to_login
+                        //, LoginFragment.arg(position)
+            )
             }
         }
         mBinding.recyclerView.adapter = mAdapter

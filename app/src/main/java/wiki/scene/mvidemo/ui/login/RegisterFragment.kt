@@ -1,5 +1,6 @@
 package wiki.scene.mvidemo.ui.login
 
+import androidx.navigation.fragment.findNavController
 import com.hjq.bar.TitleBar
 import wiki.scene.base.base.BaseFragment
 import wiki.scene.mvidemo.R
@@ -23,7 +24,9 @@ class RegisterFragment : BaseFragment(R.layout.fragment_register) {
     }
 
     override fun initView() {
-
+        mBinding.btnRegister.setOnClickListener {
+            findNavController().navigate(R.id.action_to_main)
+        }
     }
 
     override fun invalidate() {

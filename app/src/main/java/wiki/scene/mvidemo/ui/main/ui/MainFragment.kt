@@ -1,5 +1,6 @@
-package wiki.scene.mvidemo.ui.main
+package wiki.scene.mvidemo.ui.main.ui
 
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
@@ -10,6 +11,7 @@ import wiki.scene.base.tab.MainTabSelectListener
 import wiki.scene.base.tab.bind
 import wiki.scene.mvidemo.R
 import wiki.scene.mvidemo.databinding.FragmentMainBinding
+import wiki.scene.mvidemo.ui.main.MainActivity
 import wiki.scene.mvidemo.ui.main.vm.MainViewModel
 import wiki.scene.mvidemo.ui.tab1.Tab1Fragment
 import wiki.scene.mvidemo.ui.tab2.Tab2Fragment
@@ -80,6 +82,14 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             mBinding.tabLayout.setMsgMargin(1, -10F, 0F)
         }
 
+        val backCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                (requireActivity() as MainActivity).onBackPressed()
+            }
+
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(backCallback)
     }
 
     override fun invalidate() {

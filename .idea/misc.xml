@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../.gradle/caches/transforms-3/baafc3d1dfe7200fe056451fcc91d0b0/transformed/jetified-TitleBar-9.2/res/drawable/bar_drawable_placeholder.xml" value="0.1055" />
+        <entry key="app/src/main/res/layout/activity_launcher.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.20989583333333334" />

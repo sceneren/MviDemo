@@ -1,12 +1,26 @@
 package wiki.scene.mvidemo.ui.main
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
+import com.blankj.utilcode.util.ActivityUtils
+import wiki.scene.base.base.BaseActivity
 import wiki.scene.mvidemo.R
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity(R.layout.activity_main) {
+
+    companion object {
+        fun start(context: Context) {
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+            ActivityUtils.finishOtherActivities(MainActivity::class.java)
+        }
+    }
+
+    override fun enableSlideBack(): Boolean {
+        return false
+    }
+
+    override fun isDoubleClickExit(): Boolean {
+        return true
     }
 }

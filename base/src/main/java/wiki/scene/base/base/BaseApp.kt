@@ -43,11 +43,6 @@ import wiki.scene.base.toast.ToastUtil
  * @Version:        1.0.0
  */
 open class BaseApp : Application(), ImageLoaderFactory {
-    init {
-        SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ ->
-            MaterialHeader(context)
-        }
-    }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(MultiLanguages.attach(base))
@@ -61,21 +56,33 @@ open class BaseApp : Application(), ImageLoaderFactory {
         // 初始化语种切换框架
         MultiLanguages.init(this)
 
-        initToast()
-        initDialogX()
+
+    }
+
+    fun laterInit() {
+        initSmartRefreshLayout()
+        initToast(this)
+        initDialogX(this)
         initLoadSir()
         initMojito()
     }
 
-    private fun initToast() {
-        ToastUtil.init(this)
+
+    private fun initSmartRefreshLayout() {
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ ->
+            MaterialHeader(context)
+        }
+    }
+
+    private fun initToast(application: Application) {
+        ToastUtil.init(application)
     }
 
     /**
      * 配置DialogX
      */
-    private fun initDialogX() {
-        DialogX.init(this)
+    private fun initDialogX(application: Application) {
+        DialogX.init(application)
         DialogX.globalStyle = IOSStyle()
         DialogX.globalTheme = DialogX.THEME.LIGHT
         DialogX.dialogMaxWidth = ScreenUtils.getAppScreenWidth()

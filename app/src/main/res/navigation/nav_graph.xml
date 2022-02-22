@@ -3,17 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_main">
+    app:startDestination="@id/fragment_login">
 
     <fragment
         android:id="@+id/fragment_main"
-        android:name="wiki.scene.mvidemo.ui.main.MainFragment"
+        android:name="wiki.scene.mvidemo.ui.main.ui.MainFragment"
         tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_to_login"
-            app:destination="@+id/fragment_login" />
+
     </fragment>
 
+    <action
+        android:id="@+id/action_to_login"
+        app:destination="@+id/fragment_login" />
+
+    <action
+        android:id="@+id/action_to_main"
+        app:destination="@id/fragment_main" />
 
     <fragment
         android:id="@+id/fragment_login"
@@ -22,10 +27,14 @@
         <action
             android:id="@+id/action_to_register"
             app:destination="@id/fragment_register" />
+
     </fragment>
 
     <fragment
         android:id="@+id/fragment_register"
         android:name="wiki.scene.mvidemo.ui.login.RegisterFragment"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register">
+
+    </fragment>
+
 </navigation>

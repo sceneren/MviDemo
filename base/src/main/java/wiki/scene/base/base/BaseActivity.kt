@@ -72,7 +72,7 @@ abstract class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity
         initObserver()
     }
 
-   open fun beforeInitView() {
+    open fun beforeInitView() {
 
     }
 
@@ -254,6 +254,10 @@ abstract class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity
         } else {
             super.onBackPressed()
         }
+    }
+
+    override fun lazyLoadTime(): Long {
+        return 300L
     }
 
 }

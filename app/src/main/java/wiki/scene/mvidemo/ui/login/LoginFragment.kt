@@ -1,13 +1,9 @@
 package wiki.scene.mvidemo.ui.login
 
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.airbnb.mvrx.Mavericks
-import com.airbnb.mvrx.args
 import com.airbnb.mvrx.navigation.navGraphViewModel
 import com.airbnb.mvrx.withState
-import com.blankj.utilcode.util.LogUtils
 import com.hjq.bar.TitleBar
 import wiki.scene.base.base.BaseFragment
 import wiki.scene.mvidemo.R
@@ -19,11 +15,11 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
     private val mBinding: FragmentLoginBinding by viewBinding()
     private val viewModel: LoginViewModel by navGraphViewModel(R.id.nav_graph)
-    private val position: Int by args()
-
-    companion object {
-        fun arg(position: Int) = bundleOf(Mavericks.KEY_ARG to position)
-    }
+//    private val position: Int by args()
+//
+//    companion object {
+//        fun arg(position: Int) = bundleOf(Mavericks.KEY_ARG to position)
+//    }
 
     override fun initTitleBar(): TitleBar {
         return mBinding.includeTitle.titleBar.apply {
@@ -36,7 +32,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
     }
 
     override fun initView() {
-        LogUtils.e("LoginFragment.initView===>position=$position")
+//        LogUtils.e("LoginFragment.initView===>position=$position")
 
         mBinding.btnLogin.setOnClickListener {
             val username = mBinding.username.text.toString()
@@ -44,7 +40,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
             viewModel.login(username, password)
 
             withState(viewModel) { state ->
-                LogUtils.e("LoginFragment.withState(viewModel)===>position=${state.position}")
+//                LogUtils.e("LoginFragment.withState(viewModel)===>position=${state.position}")
                 Toast.makeText(
                     this@LoginFragment.context,
                     state.userInfo,
@@ -56,6 +52,11 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
         mBinding.btnRegister
             .setOnClickListener {
                 findNavController().navigate(R.id.action_to_register)
+            }
+        mBinding.btnLogin
+            .setOnClickListener {
+                findNavController().navigate(R.id.action_to_main)
+                findNavController().clearBackStack(R.id.action_to_login)
             }
     }
 
