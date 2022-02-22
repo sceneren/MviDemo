@@ -230,7 +230,7 @@ abstract class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity
     }
 
     open fun onRetryBtnClick() {
-        loadData()
+
     }
 
     open fun getTitleBarViewBinding(binding: ViewBinding): BaseTitleBarViewBinding {

@@ -14,10 +14,14 @@ import com.airbnb.mvrx.MavericksView
 import com.gyf.immersionbar.ktx.immersionBar
 import com.hjq.bar.OnTitleBarListener
 import com.hjq.bar.TitleBar
+import com.kingja.loadsir.core.LoadService
+import com.kingja.loadsir.core.LoadSir
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
+import wiki.scene.base.loadsir.ErrorCallback
+import wiki.scene.base.loadsir.LoadingCallback
 
 abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), MavericksView,
     IUiView,
@@ -32,6 +36,13 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
     abstract fun initTitleBar(): TitleBar?
 
     abstract fun hasTitleBarBack(): Boolean
+
+    private val loadSir by lazy {
+        LoadSir.getDefault()
+    }
+
+    private var loadService: LoadService<Any>? = null
+
 
     override fun onResume() {
         super.onResume()
@@ -59,6 +70,12 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
                 } else {
                     leftIcon = null
                 }
+            }
+        }
+
+        if (injectLoadServiceView() != null) {
+            loadService = loadSir.register(injectLoadServiceView()) {
+                onRetryBtnClick()
             }
         }
 
@@ -104,6 +121,26 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
     override fun lazyLoadTime(): Long {
         //大于界面的跳转动画的时间就行
         return 300L
+    }
+
+    open fun injectLoadServiceView(): View? {
+        return null
+    }
+
+    open fun showLoadingPage() {
+        loadService?.showCallback(LoadingCallback::class.java)
+    }
+
+    open fun showSuccessPage() {
+        loadService?.showSuccess()
+    }
+
+    open fun showErrorPage() {
+        loadService?.showCallback(ErrorCallback::class.java)
+    }
+
+    open fun onRetryBtnClick() {
+        loadData()
     }
 
 

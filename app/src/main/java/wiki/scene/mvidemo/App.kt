@@ -4,7 +4,7 @@ import com.airbnb.mvrx.Mavericks
 import com.airbnb.mvrx.navigation.DefaultNavigationViewModelDelegateFactory
 import rxhttp.RxHttpPlugins
 import wiki.scene.base.base.BaseApp
-import wiki.scene.base.net.config.ApiConfig
+import wiki.scene.base.net.config.OkHttpConfig
 
 class App : BaseApp() {
     override fun onCreate() {
@@ -14,7 +14,7 @@ class App : BaseApp() {
             this,
             viewModelDelegateFactory = DefaultNavigationViewModelDelegateFactory()
         )
-        RxHttpPlugins.init(ApiConfig.getOkHttpClientBuilder().build())
+        RxHttpPlugins.init(OkHttpConfig.getOkHttpClientBuilder().build())
 
     }
 }

@@ -10,11 +10,15 @@ import rxhttp.wrapper.param.RxHttp
 import rxhttp.wrapper.param.toFlowResponse
 import wiki.scene.base.MvRxViewModel
 import wiki.scene.base.net.config.ApiConfig
+import wiki.scene.base.net.errorMsg
 import wiki.scene.mvidemo.ui.tab4.entity.BannerInfo
 
 data class Tab4Status(val uiState: Int = 0) : MavericksState
 
 class Tab4ViewModel(initialState: Tab4Status) : MvRxViewModel<Tab4Status>(initialState) {
+    init {
+        getData()
+    }
 
     fun getData() {
         viewModelScope.launch {
@@ -24,7 +28,7 @@ class Tab4ViewModel(initialState: Tab4Status) : MvRxViewModel<Tab4Status>(initia
                     setState { copy(uiState = 0) }
                 }
                 .catch {
-                    LogUtils.e("===>$it")
+                    LogUtils.e("===>${it.errorMsg}")
                     setState { copy(uiState = 2) }
                 }.collect {
                     setState {

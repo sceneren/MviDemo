@@ -8,5 +8,10 @@
     <string name="base_press_again_exit">再按一次退出程序.</string>
     <string name="base_refresh">刷新</string>
     <string name="base_open_in_browser">使用浏览器打开</string>
-
+    <string name="base_network_error">当前无网络，请检查你的网络设置</string>
+    <string name="base_internet_connection_unavailable">网络连接不可用</string>
+    <string name="base_connection_timed_out">连接超时</string>
+    <string name="base_network_is_weak">网络不给力</string>
+    <string name="base_http_status_code_exception">Http状态码异常</string>
+    <string name="base_data_parsing_failed">数据解析失败</string>
 </resources>

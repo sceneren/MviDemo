@@ -1,11 +1,11 @@
 package wiki.scene.mvidemo.ui.tab4
 
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
-import com.blankj.utilcode.util.LogUtils
 import com.chad.library.adapter.base.BaseBinderAdapter
 import com.hjq.bar.TitleBar
 import wiki.scene.base.base.BaseFragment
@@ -48,9 +48,8 @@ class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {
 
     }
 
-    override fun loadData() {
-        super.loadData()
-        viewModel.getData()
+    override fun injectLoadServiceView(): View {
+        return mBinding.recyclerView
     }
 
     override fun invalidate() {
@@ -60,7 +59,7 @@ class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {
                     showLoadingPage()
                 }
                 1 -> {
-                    showEmptyPage()
+                    //showEmptyPage()
                 }
                 2 -> {
                     showErrorPage()
@@ -72,21 +71,11 @@ class Tab4Fragment : BaseFragment(R.layout.fragment_tab_4) {
         }
     }
 
-    private fun showLoadingPage() {
-        LogUtils.e("showLoadingPage")
+    override fun onRetryBtnClick() {
+        super.onRetryBtnClick()
+        viewModel.getData()
     }
 
-    private fun showEmptyPage() {
-        LogUtils.e("showEmptyPage")
-    }
-
-    private fun showErrorPage() {
-        LogUtils.e("showErrorPage")
-    }
-
-    private fun showSuccessPage() {
-        LogUtils.e("showSuccessPage")
-    }
 
     companion object {
         fun newInstance(): Tab4Fragment {

@@ -28,7 +28,7 @@ import wiki.scene.base.loadsir.ErrorCallback
 import wiki.scene.base.loadsir.LoadingCallback
 import wiki.scene.base.mojito.MojitoUtils
 import wiki.scene.base.mojito.coil.ProgressSupport
-import wiki.scene.base.net.config.ApiConfig
+import wiki.scene.base.net.config.OkHttpConfig
 import wiki.scene.base.toast.ToastUtil
 
 
@@ -115,7 +115,7 @@ open class BaseApp : Application(), ImageLoaderFactory {
         return ImageLoader.Builder(applicationContext)
             .crossfade(true)
             .okHttpClient {
-                ApiConfig.getOkHttpClientBuilder()
+                OkHttpConfig.getOkHttpClientBuilder()
                     .cache(CoilUtils.createDefaultCache(this))
                     .addInterceptor { chain ->
                         val request = chain.request()

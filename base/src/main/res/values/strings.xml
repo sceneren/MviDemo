@@ -8,4 +8,10 @@
     <string name="base_press_again_exit">Press again to exit.</string>
     <string name="base_refresh">Refresh</string>
     <string name="base_open_in_browser">Open with browser</string>
+    <string name="base_network_error">There is currently no network, please check your network settings</string>
+    <string name="base_internet_connection_unavailable">Internet connection unavailable</string>
+    <string name="base_connection_timed_out">Connection timed out</string>
+    <string name="base_network_is_weak">network is weak</string>
+    <string name="base_http_status_code_exception">Http status code exception</string>
+    <string name="base_data_parsing_failed">Data parsing failed</string>
 </resources>
