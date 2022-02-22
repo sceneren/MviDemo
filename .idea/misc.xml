@@ -19,6 +19,13 @@
         <entry key="app/src/main/res/layout/fragment_tab_4.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/fragment_tab_4_item.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/menu/main_bottom_menu.xml" value="0.22395833333333334" />
+        <entry key="base/src/main/res/layout/base_empty_view.xml" value="0.11770833333333333" />
+        <entry key="base/src/main/res/layout/base_loading_view.xml" value="0.11770833333333333" />
+        <entry key="base/src/main/res/layout/base_title_bar_view.xml" value="0.11770833333333333" />
+        <entry key="base/src/main/res/layout/base_web_ac_web.xml" value="0.11770833333333333" />
+        <entry key="base/src/main/res/layout/base_web_ac_web_title_bar_view_right_action_view.xml" value="0.11770833333333333" />
+        <entry key="base/src/main/res/layout/base_web_bg_child_view.xml" value="0.11770833333333333" />
+        <entry key="base/src/main/res/layout/base_web_layout_web.xml" value="0.11770833333333333" />
       </map>
     </option>
   </component>

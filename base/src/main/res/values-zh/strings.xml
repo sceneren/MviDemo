@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_loading">加载中…</string>
+    <string name="base_save_to_mobile">保存到手机</string>
+    <string name="base_cancel">取消</string>
+    <string name="base_save_failed">保存失败</string>
+    <string name="base_save_successful">保存成功</string>
+    <string name="base_press_again_exit">再按一次退出程序.</string>
+    <string name="base_refresh">刷新</string>
+    <string name="base_open_in_browser">使用浏览器打开</string>
+
+</resources>

@@ -27,10 +27,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
-
+    implementation rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["core_ktx"]
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["material"]
@@ -62,5 +66,27 @@ dependencies {
     implementation rootProject.ext.dependencies["okhttp"]
     implementation rootProject.ext.dependencies["okhttp_logging_interceptor"]
     api rootProject.ext.dependencies["rxhttp"]
+
     kapt rootProject.ext.dependencies["rxhttp_compiler"]
+    api rootProject.ext.dependencies["live_event_bus_x"]
+    api rootProject.ext.dependencies["DialogX"]
+    api rootProject.ext.dependencies["DialogXIOSStyle"]
+
+    api rootProject.ext.dependencies["pictureselector"]
+
+    api rootProject.ext.dependencies["refresh_layout_kernel"]
+    api rootProject.ext.dependencies["refresh_header_material"]
+
+    implementation rootProject.ext.dependencies["MultiLanguages"]
+
+    api rootProject.ext.dependencies["LoadSir"]
+
+    api rootProject.ext.dependencies["AgentWeb"]
+    api rootProject.ext.dependencies["AgentWeb_filechooser"]
+    api rootProject.ext.dependencies["AgentWeb_Downloader"]
+
+    implementation rootProject.ext.dependencies["AndroidAutoSize"]
+
+    implementation rootProject.ext.dependencies["SlideBack"]
+
 }

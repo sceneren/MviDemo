@@ -1,5 +1,7 @@
 package wiki.scene.base.base
 
+import android.app.Activity
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -21,6 +23,9 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
     IUiView,
     OnTitleBarListener {
 
+    lateinit var mContext: Context
+    lateinit var mActivity: Activity
+
     //是否已经加载过数据
     private var isFirst = false
 
@@ -39,6 +44,8 @@ abstract class BaseFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes), Ma
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mContext = requireContext()
+        mActivity = requireActivity()
         isFirst = true
         immersionBar {
             statusBarDarkFont(true)

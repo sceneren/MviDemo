@@ -57,7 +57,8 @@ ext {
             viewBindingUtil              : "0.0.3",
             rxhttp                       : "2.8.4",
             BasePopup                    : "3.2.0",
-
+            okhttps                      : "3.4.2",
+            MultiLanguages               : "8.0"
     ]
 
     dependencies = [
@@ -148,6 +149,11 @@ ext {
             "rxhttp"                       : "com.github.liujingxing.rxhttp:rxhttp:${version["rxhttp"]}",
             "rxhttp_compiler"              : "com.github.liujingxing.rxhttp:rxhttp-compiler:${version["rxhttp"]}",
             //https://github.com/razerdp/BasePopup
-            "BasePopup"                    : "io.github.razerdp:BasePopup:${version["BasePopup"]}"
+            "BasePopup"                    : "io.github.razerdp:BasePopup:${version["BasePopup"]}",
+            //https://github.com/ejlchina/okhttps
+            "okhttps"                      : "com.ejlchina:okhttps-gson:${version["okhttps"]}",
+            //https://github.com/getActivity/MultiLanguages
+            "MultiLanguages"               : "com.github.getActivity:MultiLanguages:${version["MultiLanguages"]}"
+
     ]
 }

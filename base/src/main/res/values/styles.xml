@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#201C36</item>
+        <item name="colorPrimaryDark">#201C36</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowBackground">#201C36</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:windowAnimationStyle">@style/base_windowAnimStyle</item>
+    </style>
+
+    <style name="BaseImmersiveTheme" parent="BaseAppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="base_windowAnimStyle">
+        <item name="android:activityOpenEnterAnimation">@anim/base_anim_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/base_anim_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/base_back_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/base_back_exit</item>
+    </style>
+
+</resources>

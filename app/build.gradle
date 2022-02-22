@@ -13,6 +13,7 @@ android {
         targetSdk rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -48,6 +49,6 @@ dependencies {
 
     implementation project(':base')
 
-    implementation rootProject.ext.dependencies["AndroidAutoSize"]
     implementation rootProject.ext.dependencies["BasePopup"]
+    implementation rootProject.ext.dependencies["okhttps"]
 }
